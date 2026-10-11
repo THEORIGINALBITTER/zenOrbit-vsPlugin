@@ -7,6 +7,7 @@ Build a branded orbit navigation without leaving VS Code. ZenOrbit provides a co
 - Edit the centre mark, accent colour, radius and menu labels in a live preview.
 - Set a fixed corner position and the centre-button size.
 - Define a route and an accessible label for every menu item.
+- Add a character or emoji icon to every item and drag items into their orbit order.
 - Export accessible HTML and CSS without a build tool.
 - Export a React component with CSS, or a React component styled for Tailwind.
 - Keep the current menu configuration as a portable `zenorbit.json` file.
