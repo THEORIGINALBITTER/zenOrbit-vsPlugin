@@ -5,8 +5,12 @@ Build a branded orbit navigation without leaving VS Code. ZenOrbit provides a co
 ## What it does
 
 - Edit the centre mark, accent colour, radius and menu labels in a live preview.
+- Set a fixed corner position and the centre-button size.
+- Define a route and an accessible label for every menu item.
 - Export accessible HTML and CSS without a build tool.
+- Export a React component with CSS, or a React component styled for Tailwind.
 - Keep the current menu configuration as a portable `zenorbit.json` file.
+- Load an existing `zenorbit.json` from the workspace and continue editing it.
 - Choose the export location with the `zenorbit.exportDirectory` setting.
 
 ## Use it
@@ -15,6 +19,10 @@ Build a branded orbit navigation without leaving VS Code. ZenOrbit provides a co
 2. Open the ZenOrbit icon in the Activity Bar.
 3. Design the menu in **Orbit Studio**.
 4. Select **Export to workspace**.
+
+Choose the export type before exporting: **HTML + CSS**, **React + CSS**, or
+**React + Tailwind**. Use **Load project config** to resume a previously
+exported menu.
 
 The extension writes these files to `<workspace>/zenorbit` by default:
 
