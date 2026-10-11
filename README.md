@@ -66,6 +66,17 @@ npx vsce publish patch
 
 For a manual upload, create a package with `npm run package` and upload the resulting `.vsix` on the [Visual Studio Marketplace publisher portal](https://marketplace.visualstudio.com/manage/publishers/).
 
+### Automated releases
+
+GitHub Actions validates and packages every push to `main`. To publish a Marketplace update automatically, add a repository secret named `VSCE_PAT` (a Marketplace **Manage** token) and push a version tag after updating `package.json`:
+
+```bash
+npm version patch
+git push --follow-tags
+```
+
+The tag-triggered workflow publishes the new version. Never commit the token.
+
 ## License
 
 MIT © Denis Bitter
