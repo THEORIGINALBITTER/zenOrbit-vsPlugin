@@ -1,0 +1,39 @@
+{
+  "name": "zenorbit-vscode",
+  "displayName": "ZenOrbit",
+  "description": "Build, preview and export branded orbit navigation directly in VS Code.",
+  "version": "0.1.0",
+  "publisher": "denisbitter",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/THEORIGINALBITTER/zenOrbit-vsPlugin.git"
+  },
+  "homepage": "https://github.com/THEORIGINALBITTER/zenOrbit-vsPlugin#readme",
+  "bugs": { "url": "https://github.com/THEORIGINALBITTER/zenOrbit-vsPlugin/issues" },
+  "keywords": ["zenorbit", "navigation", "orbit", "radial-menu", "web-design"],
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other", "Snippets"],
+  "activationEvents": ["onView:zenorbit.studio", "onCommand:zenorbit.openStudio"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "zenorbit.openStudio", "title": "ZenOrbit: Open Studio", "icon": "$(symbol-circle)" },
+      { "command": "zenorbit.createFiles", "title": "ZenOrbit: Create Export Files" }
+    ],
+    "viewsContainers": {
+      "activitybar": [{ "id": "zenorbit", "title": "ZenOrbit", "icon": "media/zenorbit.svg" }]
+    },
+    "views": {
+      "zenorbit": [{ "id": "zenorbit.studio", "name": "Orbit Studio", "type": "webview" }]
+    },
+    "configuration": {
+      "title": "ZenOrbit",
+      "properties": {
+        "zenorbit.exportDirectory": { "type": "string", "default": "zenorbit", "description": "Folder for generated ZenOrbit files, relative to the workspace root." }
+      }
+    }
+  },
+  "scripts": { "package": "npx @vscode/vsce package", "lint": "node --check src/extension.js", "publish:patch": "npx @vscode/vsce publish patch" },
+  "devDependencies": { "@vscode/vsce": "^3.2.1" }
+}
